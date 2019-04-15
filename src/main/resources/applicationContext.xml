@@ -7,4 +7,10 @@
           class = "ru.borisov.springcourse.RockMusic">
     </bean>
 
+    <bean id = "musicPlayer"
+          class = "ru.borisov.springcourse.MusicPlayer">
+        <constructor-arg ref = "musicBean"/>
+    </bean>
+
+
 </beans>
