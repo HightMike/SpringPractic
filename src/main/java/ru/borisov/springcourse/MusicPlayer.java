@@ -1,6 +1,15 @@
 package ru.borisov.springcourse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
+
+    List<Music> musicList = new ArrayList<>();
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
+    }
 
     private Music music;
 
@@ -37,7 +46,10 @@ public class MusicPlayer {
     }
 
     public void playMusic() {
-        System.out.println("PLaying: " + music.getSong());
+
+        for (Music s : musicList) {
+            System.out.println("PLaying: " + s.getSong());
+        }
     }
 
 }

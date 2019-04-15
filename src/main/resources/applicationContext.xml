@@ -15,6 +15,28 @@
           class = "ru.borisov.springcourse.RockMusic">
     </bean>
 
+    <bean id = "musicBean2"
+          class = "ru.borisov.springcourse.PopMusic">
+    </bean>
+
+    <bean id = "musicBean3"
+          class = "ru.borisov.springcourse.ClassicalMusic">
+    </bean>
+
+    <bean id = "musicPlayer2"
+          class = "ru.borisov.springcourse.MusicPlayer">
+        <property name="musicList">
+            <list>
+                <ref bean="musicBean" />
+                <ref bean="musicBean2" />
+                <ref bean="musicBean3" />
+            </list>
+        </property>
+
+
+    </bean>
+
+
     <bean id = "musicPlayer"
           class = "ru.borisov.springcourse.MusicPlayer">
         <property name="music" ref = "musicBean"/>
