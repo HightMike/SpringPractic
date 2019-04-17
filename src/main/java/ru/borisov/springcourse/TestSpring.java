@@ -8,9 +8,16 @@ public class TestSpring {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        MusicPlayer musicPlayer = context.getBean("musicPlayer2", MusicPlayer.class); // приводится к этому классу (второй параметр)
+        MusicPlayer firstmusicPlayer = context.getBean("musicPlayer", MusicPlayer.class); // приводится к этому классу (второй параметр)
 
-        musicPlayer.playMusic(); // внедряются зависимости через xml файл
+        MusicPlayer secondmusicPlayer = context.getBean("musicPlayer", MusicPlayer.class); // приводится к этому классу (второй параметр)
+
+        System.out.println(firstmusicPlayer.getVolume());
+
+        firstmusicPlayer.setVolume(24);
+        System.out.println(firstmusicPlayer.getVolume());
+        System.out.println(secondmusicPlayer.getVolume());
+
 
         //System.out.println(musicPlayer.getName());
         //System.out.println(musicPlayer.getVolume());

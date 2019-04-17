@@ -38,7 +38,8 @@
 
 
     <bean id = "musicPlayer"
-          class = "ru.borisov.springcourse.MusicPlayer">
+          class = "ru.borisov.springcourse.MusicPlayer"
+            scope ="prototype">
         <property name="music" ref = "musicBean"/>
 
         <property name="name" value = "${musicPlayer.name}"/>
